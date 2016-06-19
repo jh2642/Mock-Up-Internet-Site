@@ -12,7 +12,84 @@ $belowpricingboxwidth: 350px;
 $footerbackground: rgb(0, 0, 0);
 $footertext:rgb(255, 255, 255);
 
-
+@mixin pricingboxes {
+  display:flex;
+  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-left: 15px;
+}
+@mixin insidecolor {
+  display: flex;
+  flex-wrap: nowrap;
+  flex:1;
+  width: $priceboxwidth;
+}
+@mixin planinfobox {
+  flex-wrap: nowrap;
+  flex:1;
+  width: $priceboxwidth;
+  float: left;
+  color: $bodytext;
+  text-align: center;
+  line-height: 3;
+}
+@mixin pricingtext {
+  flex-wrap: nowrap;
+  align-items: center;
+  flex:1;
+  width: $priceboxwidth;
+  float: left;
+  color: $priceboxtext;
+  text-align: center;
+  padding: 25px;
+  line-height: 1.2;
+}
+@mixin choosebox {
+  flex-wrap: nowrap;
+  flex:1;
+  width: $priceboxwidth;
+  color: $bodytext;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  width: 100px;
+}
+@mixin belowpriceboxes {
+  display:flex;
+  justify-content: center;
+  width: $belowpricingboxwidth;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+@mixin belowpricecolumns {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+  width: $belowpricingboxwidth;
+  text-align: left;
+  margin-bottom: 10px;
+}
+@mixin belowpriceheader {
+  flex-wrap: wrap;
+  flex: 1;
+  width: $belowpricingboxwidth;
+  float: left;
+  color: $bodytext;
+}
+@mixin belowpricetext {
+  flex-wrap: wrap;
+  flex: 1;
+  width: $belowpricingboxwidth;
+  float: left;
+  color: $bodytext;
+  font-size: 12px;
+}
 * {
   box-sizing: border-box;
 }
@@ -111,140 +188,52 @@ h2 {
   margin-top: 40px;
 }
   .box1 {
-    display:flex;
-    justify-content: center;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin-left: 15px;
-    width: 250px;
-    text-decoration: none;
+    @include pricingboxes
   }
     .box1a {
-      display: flex;
-      flex-wrap: nowrap;
-      flex:1;
-      width: $priceboxwidth;
+      @include insidecolor;
       background-color: $pricebox1;
     }
     .box1b {
-      flex-wrap: nowrap;
-      align-items: center;
-      flex:1;
-      width: $priceboxwidth;
-      float: left;
-      color: $priceboxtext;
-      text-align: center;
-      padding: 25px;
-      line-height: 1.2;
+      @include pricingtext;
     }
     .box1c {
-      flex-wrap: nowrap;
-      flex:1;
-      width: $priceboxwidth;
-      float: left;
-      color: $bodytext;
-      text-align: center;
-      line-height: 3;
+      @include planinfobox;
     }
     .box1d {
-      flex-wrap: nowrap;
-      flex:1;
-      width: $priceboxwidth;
-      color: $bodytext;
-      text-decoration: none;
-      text-align: center;
+      @include choosebox;
     }
     .box2 {
-      display:flex;
-      justify-content: center;
-      justify-content: space-between;
-      flex-direction: column;
-      align-items: center;
-      flex-wrap: nowrap;
-      margin-left: 15px;
-      width: $priceboxwidth;
+      @include pricingboxes
     }
     .box2a {
-      display: flex;
-      flex-wrap: nowrap;
-      flex:1;
-      width: $priceboxwidth;
+      @include insidecolor;
       background-color: $pricebox2;
     }
     .box2b {
-      flex-wrap: nowrap;
-      align-items: center;
-      flex:1;
-      width: $priceboxwidth;
-      float: left;
-      color: $priceboxtext;
-      text-align: center;
-      padding: 25px;
-      line-height: 1.2;
+      @include pricingtext;
     }
     .box2c {
-      flex-wrap: nowrap;
-      flex:1;
-      width: $priceboxwidth;
-      float: left;
-      color: $bodytext;
-      text-align: center;
-      line-height: 3;
+      @include planinfobox;
     }
     .box2d {
-      flex-wrap: nowrap;
-      flex:1;
-      width: $priceboxwidth;
-      color: $bodytext;
-      text-decoration: none;
-      text-align: center;
+      @include choosebox;
     }
     .box3 {
-      display:flex;
-      justify-content: center;
-      justify-content: space-between;
-      flex-direction: column;
-      align-items: center;
-      flex-wrap: nowrap;
-      margin-left: 15px;
-      width: $priceboxwidth;
+      @include pricingboxes
     }
       .box3a {
-        display: flex;
-        flex-wrap: nowrap;
-        flex:1;
-        width: $priceboxwidth;
+        @include insidecolor;
         background-color: $pricebox3;
       }
       .box3b {
-        flex-wrap: nowrap;
-        align-items: center;
-        flex:1;
-        width: $priceboxwidth;
-        float: left;
-        color: $priceboxtext;
-        text-align: center;
-        padding: 25px;
-        line-height: 1.2;
+        @include pricingtext;
       }
       .box3c {
-        flex-wrap: nowrap;
-        flex:1;
-        width: $priceboxwidth;
-        float: left;
-        color: $bodytext;
-        text-align: center;
-        line-height: 3;
+        @include planinfobox;
       }
       .box3d {
-        flex-wrap: nowrap;
-        flex:1;
-        width: $priceboxwidth;
-        color: $bodytext;
-        text-decoration: none;
-        text-align: center;
+        @include choosebox;
       }
   .belowpricing {
     display:flex;
@@ -257,175 +246,92 @@ h2 {
     height: 400px;
   }
   .bp1 {
-    display:flex;
-    justify-content: center;
-    width: $belowpricingboxwidth;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin-left: 15px;
-    margin-right: 15px;
+    @include belowpriceboxes;
   }
   .bp2 {
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    margin-right: 15px;
-    margin-left: 15px;
-    width: $belowpricingboxwidth;
+    @include belowpriceboxes;
   }
   .column1a {
-    display: flex;
-    flex-wrap: nowrap;
-    flex:1;
-    width: $belowpricingboxwidth;
-    text-align: left;
-    margin-bottom: 10px;
+    @include belowpricecolumns;
   }
   .column1b {
-    display: flex;
-    flex-wrap: nowrap;
-    flex:1;
-    width: $belowpricingboxwidth;
-    text-align: left;
-    margin-bottom: 10px;
+    @include belowpricecolumns;
+    margin-bottom: 40px;
   }
   .column1c {
-    display: flex;
-    flex-wrap: nowrap;
-    flex:1;
-    width: $belowpricingboxwidth;
-    text-align: left;
-    margin-bottom: 10px;
+    @include belowpricecolumns;
   }
   .column1d {
-    display: flex;
-    flex-wrap: nowrap;
-    flex:1;
-    width: $belowpricingboxwidth;
-    text-align: left;
-    margin-bottom: 10px;
+    @include belowpricecolumns;
   }
   .column2a {
-    display: flex;
-    flex-wrap: nowrap;
-    flex:1;
-    width: $belowpricingboxwidth;
-    text-align: left;
-    margin-bottom: 10px;
+    @include belowpricecolumns;
   }
   .column2b {
-    display: flex;
-    flex-wrap: nowrap;
-    flex:1;
-    width: $belowpricingboxwidth;
-    text-align: left;
-    margin-bottom: 10px;
+    @include belowpricecolumns;
+    margin-bottom: 40px;
   }
   .column2c {
-    display: flex;
-    flex-wrap: nowrap;
-    flex:1;
-    width: $belowpricingboxwidth;
-    text-align: left;
-    margin-bottom: 10px;
+    @include belowpricecolumns;
   }
   .column2d {
-    display: flex;
-    flex-wrap: nowrap;
-    flex:1;
-    width: $belowpricingboxwidth;
-    text-align: left;
-    margin-bottom: 10px;
+    @include belowpricecolumns;
   }
   .getstarted {
-    flex-wrap: wrap;
-    width: $belowpricingboxwidth;
-    float: left;
-    color: $bodytext;
+    @include belowpriceheader;
   }
   .paymonthly {
-    flex-wrap: wrap;
-    width: $belowpricingboxwidth;
-    float: left;
-    color: $bodytext;
+    @include belowpriceheader;
   }
   .text1 {
-    flex-wrap: wrap;
-    width: $belowpricingboxwidth;
-    float: left;
-    color: $bodytext;
+    @include belowpricetext;
     font-size: 12px;
   }
   .text2 {
-    flex-wrap: wrap;
-    width: $belowpricingboxwidth;
-    float: left;
-    color: $bodytext;
+    @include belowpricetext;
     font-size: 12px;
   }
   .custsupport {
-    flex-wrap: wrap;
-    width: $belowpricingboxwidth;
-    float: left;
-    color: $bodytext;
+    @include belowpriceheader;
   }
   .cancel {
-    flex-wrap: wrap;
-    width: $belowpricingboxwidth;
-    float: left;
-    color: $bodytext;
+    @include belowpriceheader;
   }
   .text3 {
-    flex-wrap: wrap;
-    width: $belowpricingboxwidth;
-    float: left;
-    color: $bodytext;
+    @include belowpricetext;
     font-size: 12px;
   }
   .text4 {
-    flex-wrap: wrap;
-    width: $belowpricingboxwidth;
-    float: left;
-    color: $bodytext;
+    @include belowpricetext;
     font-size: 12px;
   }
 
   footer {
     display:flex;
-    justify-content: center;
-    flex-direction: row;
     align-items: center;
-    flex:1;
+    flex-direction: row;
+    justify-content: center;
     width:100%;
     height: 45px;
     background-color: $footerbackground;
   }
   .footer1 {
-    display: flex;
     justify-content: flex-end;
-    flex:auto;
     text-align: right;
-    flex-wrap: nowrap;
     color: $footertext;
     font-size: 12px;
+    margin-right: 5px;
   }
   .footer2 {
-    display: flex;
     justify-content: center;
-    width: 340px;
-    flex-wrap: nowrap;
+    justify-content: space-between;
     color: $footertext;
     font-size: 12px;
   }
   .footer3 {
-    display: flex;
     justify-content: flex-start;
-    flex: auto;
     text-align: left;
-    flex-wrap: nowrap;
     color: $footertext;
     font-size: 12px;
+    margin-left: 5px;
   }
