@@ -76,8 +76,8 @@ a:visited {
   margin-top: 50px;
   height: 300px;
   background: url(background.jpg);
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .pictext {
@@ -111,6 +111,10 @@ h2 {
   width: 100%;
   height: 500px;
   margin-top: 40px;
+}
+
+.pricebox a {
+  text-decoration: none;
 }
 
 .box1 {
@@ -162,6 +166,9 @@ h2 {
   text-align: center;
   justify-content: center;
   width: 100px;
+  border-radius: 50px;
+  border: 2px solid #777A6E;
+  padding: 5px;
 }
 
 .box2 {
@@ -213,6 +220,9 @@ h2 {
   text-align: center;
   justify-content: center;
   width: 100px;
+  border-radius: 50px;
+  border: 2px solid #777A6E;
+  padding: 5px;
 }
 
 .box3 {
@@ -264,6 +274,9 @@ h2 {
   text-align: center;
   justify-content: center;
   width: 100px;
+  border-radius: 50px;
+  border: 2px solid #777A6E;
+  padding: 5px;
 }
 
 .belowpricing {
