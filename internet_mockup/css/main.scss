@@ -1,0 +1,337 @@
+$headerbackground: rgb(255, 255, 255);
+$bodytext: rgb(0, 0, 0);
+$blackbackground: rgb(0, 0, 0);
+$textoverpic: rgb(255, 255, 255);
+$graytext: rgb(177, 177, 177);
+$pricebox1: rgb(22, 161, 77);
+$pricebox2: rgb(23, 102, 176);
+$pricebox3: rgb(0, 0, 0);
+$priceboxtext: rgb(255, 255, 255);
+$priceboxwidth: 250px;
+$belowpricingboxwidth: 350px;
+$footerbackground: rgb(0, 0, 0);
+$footertext:rgb(255, 255, 255);
+
+@mixin pricingboxes {
+  display:flex;
+  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-left: 15px;
+}
+@mixin insidecolor {
+  display: flex;
+  flex-wrap: nowrap;
+  flex:1;
+  width: $priceboxwidth;
+}
+@mixin planinfobox {
+  flex-wrap: nowrap;
+  flex:1;
+  width: $priceboxwidth;
+  float: left;
+  color: $bodytext;
+  text-align: center;
+  line-height: 3;
+}
+@mixin pricingtext {
+  flex-wrap: nowrap;
+  align-items: center;
+  flex:1;
+  width: $priceboxwidth;
+  float: left;
+  color: $priceboxtext;
+  text-align: center;
+  padding: 25px;
+  line-height: 1.2;
+}
+@mixin choosebox {
+  flex-wrap: nowrap;
+  flex:1;
+  width: $priceboxwidth;
+  color: $bodytext;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  width: 100px;
+}
+@mixin belowpriceboxes {
+  display:flex;
+  justify-content: center;
+  width: $belowpricingboxwidth;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+@mixin belowpricecolumns {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+  width: $belowpricingboxwidth;
+  text-align: left;
+  margin-bottom: 10px;
+}
+@mixin belowpriceheader {
+  flex-wrap: wrap;
+  flex: 1;
+  width: $belowpricingboxwidth;
+  float: left;
+  color: $bodytext;
+}
+@mixin belowpricetext {
+  flex-wrap: wrap;
+  flex: 1;
+  width: $belowpricingboxwidth;
+  float: left;
+  color: $bodytext;
+  font-size: 12px;
+}
+* {
+  box-sizing: border-box;
+}
+.img {
+  width: 100%;
+}
+body {
+  padding:0;
+  margin: 0;
+  font-family: 'Heebo', sans-serif;
+}
+header {
+  background-color: $headerbackground;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.nav {
+  margin: 10px;
+  width: 100%;
+  height: 40px;
+}
+.col-left {
+  width: 2%;
+  display:block;
+  font-size: 8px;
+  text-align: right;
+}
+.col-middle {
+  width: 40%;
+  display:block;
+  float: left;
+}
+.col-right {
+  width: 20%;
+  padding-top: 10px;
+  display:block;
+  float: right;
+}
+li a:hover {
+    color: $bodytext;
+}
+li a {
+    color: $graytext;
+    text-decoration: none;
+    margin: 8px;
+    float: left;
+}
+ul {
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+a:visited {
+    color: $graytext;
+  }
+.piccontainer {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  min-width: 100%;
+  margin-top:50px;
+  height: 300px;
+  background: url(background.jpg);
+}
+.pictext {
+  flex-wrap: nowrap;
+  height:200px;
+}
+.picturetext {
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+}
+
+h2 {
+   width: 100%;
+   color: $textoverpic;
+   font-size: 40px;
+   text-shadow: $blackbackground 1px 1px;
+}
+.large {
+  font-size: 70px;
+}
+
+.pricebox {
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  flex:1;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  margin-top: 40px;
+}
+  .box1 {
+    @include pricingboxes
+  }
+    .box1a {
+      @include insidecolor;
+      background-color: $pricebox1;
+    }
+    .box1b {
+      @include pricingtext;
+    }
+    .box1c {
+      @include planinfobox;
+    }
+    .box1d {
+      @include choosebox;
+    }
+    .box2 {
+      @include pricingboxes
+    }
+    .box2a {
+      @include insidecolor;
+      background-color: $pricebox2;
+    }
+    .box2b {
+      @include pricingtext;
+    }
+    .box2c {
+      @include planinfobox;
+    }
+    .box2d {
+      @include choosebox;
+    }
+    .box3 {
+      @include pricingboxes
+    }
+      .box3a {
+        @include insidecolor;
+        background-color: $pricebox3;
+      }
+      .box3b {
+        @include pricingtext;
+      }
+      .box3c {
+        @include planinfobox;
+      }
+      .box3d {
+        @include choosebox;
+      }
+  .belowpricing {
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+    height: 400px;
+  }
+  .bp1 {
+    @include belowpriceboxes;
+  }
+  .bp2 {
+    @include belowpriceboxes;
+  }
+  .column1a {
+    @include belowpricecolumns;
+  }
+  .column1b {
+    @include belowpricecolumns;
+    margin-bottom: 40px;
+  }
+  .column1c {
+    @include belowpricecolumns;
+  }
+  .column1d {
+    @include belowpricecolumns;
+  }
+  .column2a {
+    @include belowpricecolumns;
+  }
+  .column2b {
+    @include belowpricecolumns;
+    margin-bottom: 40px;
+  }
+  .column2c {
+    @include belowpricecolumns;
+  }
+  .column2d {
+    @include belowpricecolumns;
+  }
+  .getstarted {
+    @include belowpriceheader;
+  }
+  .paymonthly {
+    @include belowpriceheader;
+  }
+  .text1 {
+    @include belowpricetext;
+    font-size: 12px;
+  }
+  .text2 {
+    @include belowpricetext;
+    font-size: 12px;
+  }
+  .custsupport {
+    @include belowpriceheader;
+  }
+  .cancel {
+    @include belowpriceheader;
+  }
+  .text3 {
+    @include belowpricetext;
+    font-size: 12px;
+  }
+  .text4 {
+    @include belowpricetext;
+    font-size: 12px;
+  }
+
+  footer {
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    width:100%;
+    height: 45px;
+    background-color: $footerbackground;
+  }
+  .footer1 {
+    justify-content: flex-end;
+    text-align: right;
+    color: $footertext;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+  .footer2 {
+    justify-content: center;
+    justify-content: space-between;
+    color: $footertext;
+    font-size: 12px;
+  }
+  .footer3 {
+    justify-content: flex-start;
+    text-align: left;
+    color: $footertext;
+    font-size: 12px;
+    margin-left: 5px;
+  }
