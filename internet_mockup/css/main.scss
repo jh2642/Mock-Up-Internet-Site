@@ -56,6 +56,9 @@ $footertext:rgb(255, 255, 255);
   text-align: center;
   justify-content: center;
   width: 100px;
+  border-radius: 50px;
+  border: 2px solid #777A6E;
+  padding: 5px;
 }
 @mixin belowpriceboxes {
   display:flex;
@@ -207,9 +210,6 @@ h2 {
     }
     .box1d {
       @include choosebox;
-      border-radius: 50px;
-      border: 2px solid #777A6E;
-      padding: 5px;
     }
     .box2 {
       @include pricingboxes
@@ -226,9 +226,6 @@ h2 {
     }
     .box2d {
       @include choosebox;
-      border-radius: 50px;
-      border: 2px solid #777A6E;
-      padding: 5px;
     }
     .box3 {
       @include pricingboxes
@@ -245,9 +242,6 @@ h2 {
       }
       .box3d {
         @include choosebox;
-        border-radius: 50px;
-        border: 2px solid #777A6E;
-        padding: 5px;
       }
   .belowpricing {
     display:flex;
